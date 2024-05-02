@@ -1,0 +1,16 @@
+//- extends base
+
+//- block content
+
+table(style="width: 100%; border-collapse: collapse; text-align: center;")
+  thead
+    tr
+      th(style="padding: 10px; border: 1px solid #000;") Branch
+      th(style="padding: 10px; border: 1px solid #000;") Name
+      th(style="padding: 10px; border: 1px solid #000;") Company
+  tbody
+    each entry in entries
+      tr
+        td(style="padding: 10px; border: 1px solid #000;")= entry.Branch
+        td(style="padding: 10px; border: 1px solid #000;")= entry.Name
+        td(style="padding: 10px; border: 1px solid #000;")= entry.Company

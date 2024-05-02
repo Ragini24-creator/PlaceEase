@@ -1,0 +1,18 @@
+extends base
+
+block content
+    .admin-wrapper
+        .admin-header.centerdiv
+            
+            .admin
+                a(href="/editPlacementDetails" ) Edit Placement Data
+    section.admin-notifications
+        h2 Admin Notifications
+        .notification-form
+            h3 Create New Notification
+            form.admin-form(method="POST")
+                label.adminLabel( for="notificationTitle") Title:
+                input.admin-title(type="text", id="notificationTitle", name="notificationTitle", required)
+                label.adminLabel( for="notificationContent") Content:
+                textarea.admin-content(id="notificationContent", name="notificationContent", rows="4", required)
+                button(type="submit") Post Notification

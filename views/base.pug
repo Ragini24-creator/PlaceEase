@@ -1,0 +1,48 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css', rel='stylesheet')
+    link(rel='stylesheet', href='/style.css')
+    link(href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet") 
+    link(rel='preconnect', href='https://fonts.googleapis.com')
+    link(rel='preconnect', href='https://fonts.gstatic.com', crossorigin)
+    link(href='https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,400;10..48,500;10..48,600&family=Poppins:ital,wght@0,300;0,400;1,400;1,500&family=Rubik:ital,wght@0,500;0,600;0,700;1,600&display=swap', rel='stylesheet')
+    title Placement Portal
+  body
+    .home-wrapper
+      .login-header.centerdiv
+        .logo-title
+          img.logo(src='/images/logo.jpeg', alt='logo', width='55px', height='55px')
+          h1 Institute Placement Portal
+        //- .welcome-msg 
+        //-   p Welcome to Our Placement Portal!
+
+          //Content
+
+    block content 
+      h1 This is a placeholder      
+            
+        
+    section.footer-section
+      footer.footer.centerdiv
+        div.footer-contact
+          p
+            span.bold-text Contact:
+            |  info@ltceinfo.in
+        div.footer-links
+          a(href='/privacy-policy') Privacy Policy
+          a(href='/terms-of-service') Terms of Service
+        div.footer-social
+          a.social-icon(href='#')
+            i.bx.bxl-linkedin
+          a.social-icon(href='#')
+            i.bx.bxl-twitter
+        div.footer-copyright
+          p © 2023 Institute placement portal. All rights reserved.
+
+    //- script(src='https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.0/esm/axios.min.js')
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    script(src='/js')       

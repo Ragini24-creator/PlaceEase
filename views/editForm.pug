@@ -1,0 +1,57 @@
+html
+  head
+    title Form Example
+    style.
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      form {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        text-align: left;
+        width: 300px;
+      }
+      .form-group {
+        margin-bottom: 15px;
+      }
+      label {
+        font-weight: bold;
+        display: block;
+        margin-bottom: 5px;
+      }
+      input {
+        width: 100%;
+        padding: 8px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+      button[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        cursor: pointer;
+      }
+  body
+    form.placement_edit_form(method="POST")
+      .form-group
+        label(for="branch") Branch
+        input(type="text" name="branch" id="branch" placeholder="Enter branch")
+      .form-group
+        label(for="name") Name
+        input(type="text" name="name" id="name" placeholder="Enter name")
+      .form-group
+        label(for="company") Company
+        input(type="text" name="company" id="company" placeholder="Enter company")
+      .form-group
+        button(type="submit") Submit
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    script(src='/js')       

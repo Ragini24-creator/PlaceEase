@@ -1,0 +1,228 @@
+const l = window.location.href.split("/");
+console.log(l);
+const login = async (email, password, role) => {
+  // console.log(email, password);
+  try {
+    const res = await axios({
+      method: "POST",
+      url: "http://127.0.0.1:3000/api/v1/login",
+      data: {
+        email,
+        password,
+        role,
+      },
+    });
+
+    console.log(res);
+    if (res.status === 200) {
+      const { redirectURL } = res.data;
+
+      // Redirect to the URL provided in the response data
+      window.location.href = redirectURL;
+    }
+    // window.location.reload();
+  } catch (err) {
+    console.log(err.response.data);
+  }
+};
+
+if (l[l.length - 1] == "login") {
+  document.querySelector(".login-form").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const email = document.querySelector(".login-form-email").value;
+    const password = document.querySelector(".login-form-password").value;
+    const studentRadio = document.getElementById("student");
+    const adminRadio = document.getElementById("admin");
+    let role;
+
+    if (studentRadio.checked) {
+      role = studentRadio.value;
+    } else if (adminRadio.checked) {
+      role = adminRadio.value;
+    }
+
+    login(email, password, role);
+  });
+}
+
+// console.log(window.location.href.split("/"));
+
+const post_notification = async function (title, content) {
+  try {
+    console.log(title, content);
+    const res = await axios({
+      method: "POST",
+      url: "http://127.0.0.1:3000/api/v1/admin",
+      data: {
+        title,
+        content,
+      },
+    });
+
+    console.log(res);
+  } catch (err) {
+    console.log(err.response.data);
+  }
+};
+
+if (l[l.length - 1] == "admin") {
+  document.querySelector(".admin-form").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const title = document.querySelector("#notificationTitle").value;
+    const content = document.querySelector("#notificationContent").value;
+
+    post_notification(title, content);
+    // title.value = "";
+    // content.value = "";
+    window.location.reload();
+  });
+}
+
+const sendUpdateRequest = async function (Branch, Name, Company) {
+  try {
+    const res = await axios({
+      method: "POST",
+      url: "http://127.0.0.1:3000/api/v1/editPlacementDetails",
+      data: {
+        Branch,
+        Name,
+        Company,
+      },
+    });
+
+    console.log(res);
+  } catch (err) {
+    console.log(err.response.data);
+  }
+};
+
+if (l[l.length - 1] == "editPlacementDetails") {
+  document
+    .querySelector(".placement_edit_form")
+    .addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const branch = document.querySelector("#branch").value;
+      const name = document.querySelector("#name").value;
+      const company = document.querySelector("#company").value;
+      console.log(branch, name, company);
+      sendUpdateRequest(branch, name, company);
+      window.location.reload();
+    });
+}
+///////////////
+// const send_profile_data = async (
+//   name,
+//   summ,
+//   email,
+//   password,
+//   passwordConfirm,
+//   phone,
+//   dept,
+//   yrofstdy,
+//   cgpi,
+//   lngspkn,
+//   linkedin,
+//   skills,
+//   interests,
+//   projects
+// ) => {
+//   try {
+//     const res = await axios({
+//       method: "POST",
+//       url: "http://127.0.0.1:3000/api/v1/userProfile",
+//       data: {
+//         name,
+//         professionalSummary: summ,
+
+//         Email: email,
+
+//         Password: password,
+
+//         PasswordConfirm: passwordConfirm,
+
+//         Phn: phone,
+
+//         Department: dept,
+
+//         YearOfStudy: yrofstdy,
+
+//         CGPI: cgpi,
+
+//         langugesSpoken: lngspkn,
+
+//         linkedinProfile: linkedin,
+
+//         Skills: skills,
+
+//         Interests: interests,
+//         Projects: projects,
+//       },
+//     });
+
+//     // console.log(res);
+//     // if (res.status === 200) {
+//     //   const { redirectURL } = res.data;
+
+//     //   // Redirect to the URL provided in the response data
+//     //   window.location.href = redirectURL;
+//     // }
+//   } catch (err) {
+//     console.log(err.response.data);
+//   }
+// };
+
+// if (l[l.length - 1] == "userProfile") {
+//   document
+//     .querySelector(".submit-profile_for")
+//     .addEventListener("submit", function (e) {
+//       e.preventDefault();
+//       const name = document.querySelector("#profname").value;
+//       const summ = document.querySelector("#notificationTitlea").value;
+//       const email = document.querySelector("#notificationContentb").value;
+//       const password = document.querySelector("#notificationContenty").value;
+//       const passwordConfirm = document.querySelector(
+//         "#notificationContentz"
+//       ).value;
+
+//       const phone = document.querySelector("#notificationContentc").value;
+//       const dept = document.querySelector("#notificationContentd").value;
+//       const yrofstdy = document.querySelector("#notificationContente").value;
+//       const cgpi = document.querySelector("#notificationContentf").value;
+//       const lngspkn = document.querySelector("#notificationContentg").value;
+//       const linkedin = document.querySelector("#notificationContenth").value;
+//       const skills = document.querySelector("#notificationContenti").value;
+//       const interests = document.querySelector("#notificationContentj").value;
+//       const projects = document.querySelector("#notificationContentk").value;
+
+//       send_profile_data(
+//         name,
+//         summ,
+//         email,
+//         password,
+//         passwordConfirm,
+//         phone,
+//         dept,
+//         yrofstdy,
+//         cgpi,
+//         lngspkn,
+//         linkedin,
+//         skills,
+//         interests,
+//         projects
+//       );
+//       name.value = "";
+//       summ.value = "";
+//       email.value = "";
+//       phone.value = "";
+//       dept.value = "";
+//       yrofstdy.value = "";
+//       cgpi.value = "";
+//       lngspkn.value = "";
+//       linkedin.value = "";
+//       skills.value = "";
+//       interests.value = "";
+//       projects.value = "";
+//     });
+// }
+///////////////// For admin page ////////////////

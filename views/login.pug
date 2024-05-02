@@ -1,0 +1,28 @@
+extends base
+
+block content
+  .centered-container
+    .container
+      .inner-login-div
+        form.login-form
+          h2 LOGIN
+
+          .input-box
+            input(type="email", placeholder="Email", class="login-form-email")
+            i.bx.bxs-envelope
+
+          .input-box
+            input(type="password", placeholder="Password", class="login-form-password")
+            i.bx.bxs-lock-alt
+
+          .div-role
+            label(for="role") Role:
+            input(type="radio", id="student", name="role", value="student")
+            label(for="student") Student
+            input(type="radio", id="admin", name="role", value="admin")
+            label(for="admin") Admin
+
+          button.btn-login(type='submit') LOGIN
+
+          
+

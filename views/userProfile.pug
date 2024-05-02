@@ -1,0 +1,45 @@
+extends base
+
+block content
+  .centerdiv
+    .admin-notifications
+      h2 Enter Your Details
+      form.notification-form.submit-profile_for(method="POST")
+        label.adminLabel(for="name") Name
+        input#profname(type="text", placeholder="name", name="name")
+        
+        label.adminLabel(for="professionalSummary") Professional Summary
+        input#notificationTitlea(type="text", placeholder="Professional Summary", name="professionalSummary")
+        
+        label.adminLabel(for="email") Email
+        input#notificationContentb(type="email", placeholder="Email", name="email")
+
+        
+        label.adminLabel(for="phoneNumber") Phone
+        input#notificationContentc(type="text", placeholder="Phone", name="phoneNumber")
+        
+        label.adminLabel(for="department") Department
+        input#notificationContentd(type="text", placeholder="Department", name="department")
+        
+        label.adminLabel(for="yearOfStudy") Year of Study
+        input#notificationContente(type="text", placeholder="Year of Study", name="yearOfStudy")
+        
+        label.adminLabel(for="cgpi") CGPI
+        input#notificationContentf(type="text", placeholder="CGPI", name="cgpi")
+        
+        label.adminLabel(for="languagesSpoken") Languages Spoken
+        input#notificationContentg(type="text", placeholder="Languages Spoken", name="languagesSpoken")
+        
+        label.adminLabel(for="linkedinProfile") LinkedIn Profile
+        input#notificationContenth(type="text", placeholder="LinkedIn Profile", name="linkedinProfile")
+        
+        label.adminLabel(for="skills") Skills
+        input#notificationContenti(type="text", placeholder="Skills", name="skills")
+        
+        label.adminLabel(for="interests") Interests
+        input#notificationContentj(type="text", placeholder="Interests", name="interests")
+        
+        label.adminLabel(for="projects") Projects
+        input#notificationContentk(type="text", placeholder="Projects", name="projects")
+        
+        button.submit-profile_form(type="submit") Submit

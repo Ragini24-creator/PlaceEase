@@ -1,0 +1,43 @@
+extends base
+
+block content 
+
+  .notification-page.center
+
+    h2 Notifications
+
+    .notification-wrapper
+      each notification in notifications
+      
+        span
+            i.bx.bxs-graduation
+            .flex
+            h3.title= notification.title
+            //- p Posted on October 17, 2023
+            .content= notification.content
+           
+
+        //- span
+        //- i.bx.bx-clipboard
+        //- .flex
+        //-   h3 Test
+        //-   p Posted on October 17, 2023
+        //- p Dear Students, you will be having an aptitude test on Thursday this week.
+      
+        
+    //-   span
+    //-     i.bx.bx-clipboard
+    //-     .flex
+    //-       h3 Test
+    //-       p Posted on October 17, 2023
+    //-     p Dear Students, you will be having an aptitude test on Thursday this week.
+        
+    //-   span
+    //-     i.bx.bxs-graduation
+    //-     .flex
+    //-       h3 Internship
+    //-       p Posted on October 17, 2023
+    //-     p We have an exciting internship opportunity for you!
+    //-     p Company: Civo
+    //-     p Internship Position: Software Development Intern
+    //-     p Duration: 3 months

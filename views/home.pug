@@ -1,0 +1,94 @@
+//- extends base
+
+//- block content
+//-   .home-wrapper
+//-     .home-header.centerdiv
+//-       .subheading.centerdiv
+//-         .subheading-content
+//-           h1 Welcome to our Placement Portal
+//-           p Your Gateway to Success in Engineering Placements and Internships
+//-           a.notification(href="/notification", target="_blank") Notifications
+//-         .subheading-img
+//-           img(src="/images/illustration.jpeg", width="100%", height="100%")
+
+//-     section.student-profile
+//-       h2.studentprofile-heading Here's Your Student Profile
+//-       img(src="/images/user-icon2.png", alt="student profile", width="15%", height="20%")
+//-       .student-details
+//-         h2= userData.name
+//-         p.professional-summary= userData.professionalSummary
+//-         p.bold-text Email: #{userData.Email}
+//-         p.bold-text Phone Number: #{userData.Phn}
+//-         p.bold-text Department: #{userData.Department}
+//-         p.bold-text Year of study: #{userData.YearOfStudy}
+//-         p.bold-text CGPI: #{userData.CGPI}
+//-         p.bold-text Languages spoken: #{userData.languagesSpoken}
+//-         p.bold-text Linkedin profile: #{userData.linkedInProfile}
+
+//-       .skills
+//-         h3 Skills
+//-         ul
+//-           each skill in userData.Skills.split(', ')
+//-             li= skill
+
+//-       .interests
+//-         h3 Interests
+//-         ul
+//-           each interest in userData.Interests.split(', ')
+//-             li= interest
+
+//-       .projects
+//-         h3 Projects
+//-         ul
+//-           each project in userData.Projects.split(', ')
+//-             li= project
+
+
+extends base
+
+block content
+  .home-wrapper
+    .home-header.centerdiv
+      .subheading.centerdiv
+        .subheading-content
+          h1 Welcome to our Placement Portal
+          p Your Gateway to Success in Engineering Placements and Internships
+          a.notification.create-profile( href="/placementDetails") placement details
+          a.notification(href="/notification") Notifications
+        .subheading-img
+          img(src="/images/illustration.jpeg", width="100%", height="100%")
+    
+    
+
+    section.student-profile
+      h2.studentprofile-heading Here's Your Student Profile
+      img(src="/images/user-icon2.png", alt="student profile", width="15%", height="20%")
+      .student-details
+        h2= userData.name
+        p.professional-summary= userData.professionalSummary
+        p.bold-text Email: #{userData.Email}
+        p.bold-text Phone Number: #{userData.Phn}
+        p.bold-text Department: #{userData.Department}
+        p.bold-text Year of study: #{userData.YearOfStudy}
+        p.bold-text CGPI: #{userData.CGPI}
+        p.bold-text Languages spoken: #{userData.languagesSpoken}
+        p.bold-text Linkedin profile: #{userData.linkedInProfile}
+
+        .skills
+          h3 Skills
+          ul
+            each skill in userData.Skills.split(', ')
+              li= skill
+
+        .interests
+          h3 Interests
+          ul
+            each interest in userData.Interests.split(', ')
+              li= interest
+
+        .projects
+          h3 Projects
+          p= userData.Projects
+          //- ul
+          //-   each project in userData.Projects
+          //-     li= project
