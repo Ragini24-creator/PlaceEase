@@ -23,3 +23,6 @@
 - **Mongoose**: ODM library for MongoDB, facilitating schema-based data modeling.
 - **JWT (JSON Web Tokens)**: For secure user authentication.
 - **Pug**: Templating engine for server-side rendering and creating an interactive UI.
+
+## ## Future Improvements
+This was my first full-stack project, built in a rush while learning the stack. As a result, the file structure and code organization may not follow best practices. I plan to refactor it in the future and improve code structure, separation of concerns, and overall maintainability.
